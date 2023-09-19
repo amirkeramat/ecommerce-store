@@ -10,7 +10,7 @@ import IconButton from "@/components/ui/icon-button";
 import Currency from "./currency";
 import { useRouter } from "next/navigation";
 import usePreviewModal from "@/hooks/use-preview-modal";
-
+import { useParams } from "next/navigation";
 interface ProductCardProps {
   data: Product;
 }
@@ -19,9 +19,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ data }) => {
   const { onOpen } = usePreviewModal();
 
   const router = useRouter();
-
+  const {storeId} = useParams()
   const handleClick = () => {
-    router.push(`/product/${data?.id}`);
+    router.push(`/categories/${storeId}/product/${data?.id}`);
   };
 
   const onPreview: MouseEventHandler<HTMLButtonElement> = (event) => {
