@@ -2,7 +2,7 @@
 
 import axios from "axios";
 import { useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import toast from "react-hot-toast";
 
 import Button from "@/components/ui/button";
@@ -13,6 +13,7 @@ const Summary = () => {
   const searchParams = useSearchParams();
   const items = useCart((state) => state.items);
   const removeAll = useCart((state) => state.removeAll);
+  const {storeId} = useParams()
 
   useEffect(() => {
     if (searchParams.get("success")) {
@@ -30,7 +31,7 @@ const Summary = () => {
 
   const onCheckout = async () => {
     const res = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
+      `${process.env.NEXT_PUBLIC_API_URL}/${storeId}/checkout`,
       {
         productIds: items.map((item) => item.id),
       }
