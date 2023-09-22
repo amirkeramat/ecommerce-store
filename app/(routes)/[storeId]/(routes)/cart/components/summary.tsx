@@ -13,7 +13,7 @@ const Summary = () => {
   const searchParams = useSearchParams();
   const items = useCart((state) => state.items);
   const removeAll = useCart((state) => state.removeAll);
-  const {storeId} = useParams()
+  const { storeId } = useParams();
 
   useEffect(() => {
     if (searchParams.get("success")) {
@@ -63,7 +63,11 @@ const Summary = () => {
           <Currency value={totalPrice} />
         </div>
       </div>
-      <Button disabled={items.length === 0} onClick={onCheckout} className="w-full  mt-6">
+      <Button
+        disabled={items.length === 0}
+        onClick={onCheckout}
+        className="w-full  mt-6"
+      >
         CheckOut
       </Button>
     </div>
