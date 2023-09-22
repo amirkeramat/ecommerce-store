@@ -8,6 +8,12 @@ export interface Billboard {
   label: string;
   imageUrl: string;
 }
+export interface Banner {
+  id: string;
+  label: string;
+  imageUrl: string;
+  isDefault: boolean;
+}
 
 export interface Category {
   id: string;

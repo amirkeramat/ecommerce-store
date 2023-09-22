@@ -12,6 +12,7 @@ interface StoreListBoxProps {
 
 const StoreListBox: React.FC<StoreListBoxProps> = ({ stores }) => {
   const [selected, setSelected] = useState(stores[0]);
+  const [loading, setLoading] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const router = useRouter();
   useEffect(() => {
@@ -23,7 +24,8 @@ const StoreListBox: React.FC<StoreListBoxProps> = ({ stores }) => {
   }
 
   const onClick = () => {
-    router.push(`/home/${selected.id}`);
+    setLoading(true)
+    router.push(`/${selected.id}`);
   };
 
   return (
@@ -75,7 +77,7 @@ const StoreListBox: React.FC<StoreListBoxProps> = ({ stores }) => {
           </Transition>
         </div>
       </Listbox>
-      <Button onClick={onClick} className="flex items-center w-[36] mt-12">
+      <Button disabled={loading} onClick={onClick} className="flex items-center w-[36] mt-12">
         Enter
       </Button>
     </div>

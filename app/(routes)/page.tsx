@@ -1,6 +1,6 @@
 import GetStores from "@/actions/get-stores";
 import React from "react";
-import StoreListBox from "./components/store-list-box";
+import StoreListBox from "../../components/ui/store-list-box";
 
 const SetupPage = async () => {
   const stores = await GetStores();
