@@ -31,7 +31,7 @@ const HomePage: React.FC<HomePageProps> = async ({ params: { storeId } }) => {
     <>
       <Navbar storeId={storeId} />
       <Suspense fallback={<Loading/>}>
-        <div className="h-screen">
+        <div className="lg:h-screen">
           <Container>
         <span className="flex flex-col items-center  pt-2 text-3xl font-bold">
           Welcome To
