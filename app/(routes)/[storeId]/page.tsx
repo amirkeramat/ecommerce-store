@@ -7,6 +7,8 @@ import GetStores from "@/actions/get-stores";
 import { redirect } from "next/navigation";
 import getBanners from "@/actions/get-banner";
 import Banner from "@/components/banner";
+import { Suspense } from "react";
+import Loading from "@/app/loading";
 
 export const revalidate = 0;
 
@@ -28,7 +30,8 @@ const HomePage: React.FC<HomePageProps> = async ({ params: { storeId } }) => {
   return (
     <>
       <Navbar storeId={storeId} />
-      <Container>
+      <Suspense fallback={<Loading/>}>
+         <Container>
         <span className="flex flex-col items-center  pt-2 text-3xl font-bold">
           Welcome To
           <h1 className="font-semibold text-2xl text-gray-700">
@@ -42,6 +45,8 @@ const HomePage: React.FC<HomePageProps> = async ({ params: { storeId } }) => {
           </div>
         </div>
       </Container>
+      </Suspense>
+     
       <Footer />
     </>
   );

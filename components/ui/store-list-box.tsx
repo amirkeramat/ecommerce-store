@@ -5,6 +5,7 @@ import { ArrowDown, CheckCircle } from "lucide-react";
 import { Store } from "@/types";
 import Button from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import Loading from "@/components/loading";
 
 interface StoreListBoxProps {
   stores: Store[];
@@ -30,6 +31,7 @@ const StoreListBox: React.FC<StoreListBoxProps> = ({ stores }) => {
 
   return (
     <div className="w-72">
+      {loading && <div className="fixed z-50 inset-0 w-full h-screen bg-black/25 flex justify-center items-center"><Loading/></div>}
       <Listbox value={selected} onChange={setSelected}>
         <div className="relative mt-1">
           <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">

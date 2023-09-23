@@ -6,6 +6,9 @@ import { Urbanist } from "next/font/google";
 import ModalProvider from "@/providers/modal-provider";
 import ToastProvider from "@/providers/toast-provider";
 
+import NextTopLoader from "nextjs-toploader";
+
+
 const font = Urbanist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -21,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
+        <NextTopLoader/>
         <ModalProvider />
         <ToastProvider />
         {children}
