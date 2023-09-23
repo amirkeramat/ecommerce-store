@@ -19,16 +19,11 @@ const Navbar: React.FC<NavbarProps> = async ({
   const stores = await GetStores();
   const categories = await getCategories(storeId);
   return (
-    <div className="border-b">
+    <div className="border-b border-gray-600 dark:border-gray-600">
       <Container>
         <div className="relative px-4 sm:px-6 flex h-16 items-center">
-          <Link href={`/`} className="ml-4 flex lg-ml-0 gap-x-2">
-            <p className="font-bold text-xl text-neutral-500">Switch Store</p>
-          </Link>
-          <Link href={`/${storeId}`} className="ml-4 flex lg-ml-0 gap-x-2">
-            <p className="font-bold text-xl hover:text-black duration-200">Home</p>
-          </Link>
           <MainNav data={categories} />
+          
           <NavbarActions />
         </div>
       </Container>

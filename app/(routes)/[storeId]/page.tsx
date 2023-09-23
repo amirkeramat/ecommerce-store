@@ -34,7 +34,7 @@ const HomePage: React.FC<HomePageProps> = async ({ params: { storeId } }) => {
          <Container>
         <span className="flex flex-col items-center  pt-2 text-3xl font-bold">
           Welcome To
-          <h1 className="font-semibold text-2xl text-gray-700">
+          <h1 className="font-semibold text-2xl text-gray-700 dark:text-gray-200">
             {activeStore?.name}
           </h1>
         </span>
@@ -46,7 +46,6 @@ const HomePage: React.FC<HomePageProps> = async ({ params: { storeId } }) => {
         </div>
       </Container>
       </Suspense>
-     
       <Footer />
     </>
   );

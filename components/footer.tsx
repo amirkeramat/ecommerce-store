@@ -2,11 +2,11 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-white border-t">
+    <div className=" border-t border-gray-600 dark:border-gray-600">
       <div className="mx-auto py-10">
-        <p className="text-center text-xs text-black">
-            &copy; NextStore, Inc. All rights reserved
-            </p>
+        <p className="text-center text-xs text-black dark:text-white">
+          &copy; NextStore, Inc. All rights reserved
+        </p>
       </div>
     </div>
   );

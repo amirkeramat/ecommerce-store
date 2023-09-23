@@ -66,7 +66,7 @@ const Summary = () => {
       <Button
         disabled={items.length === 0}
         onClick={onCheckout}
-        className="w-full  mt-6"
+        className="w-full  mt-6 bg-black dark:bg-black text-white dark:text-white"
       >
         CheckOut
       </Button>
