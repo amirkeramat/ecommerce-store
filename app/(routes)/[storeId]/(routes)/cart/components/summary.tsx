@@ -45,7 +45,8 @@ const Summary = () => {
       className="
       mt-16
       rounded-md
-    bg-gray-50
+      bg-gray-100
+    dark:bg-zinc-800
       px-4
       py-6
       sm:p-6
@@ -54,10 +55,10 @@ const Summary = () => {
       lg:p-8
     "
     >
-      <h2 className="text-lg font-medium text-gray-900">Order Summary</h2>
+      <h2 className="text-lg font-medium ">Order Summary</h2>
       <div className="mt-6 space-y-4">
         <div className="flex items-center justify-between border-t border-gray-200 pt-4">
-          <div className=" text-base font-medium text-gray-900">
+          <div className=" text-base font-medium ">
             Order total
           </div>
           <Currency value={totalPrice} />
